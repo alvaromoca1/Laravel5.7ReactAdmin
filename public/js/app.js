@@ -67165,6 +67165,28 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/img/github.svg":
+/*!**********************************!*\
+  !*** ./resources/img/github.svg ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/github.svg?4ffd4fe7945af123788bf5888296c696";
+
+/***/ }),
+
+/***/ "./resources/img/google.svg":
+/*!**********************************!*\
+  !*** ./resources/img/google.svg ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/google.svg?87be59a1f7061fc6021876aad6fee028";
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -67185,7 +67207,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
  */
 
 
-__webpack_require__(/*! ./components/Example */ "./resources/js/components/Example.tsx");
+__webpack_require__(/*! ./router/router */ "./resources/js/router/router.tsx");
 
 /***/ }),
 
@@ -67234,10 +67256,10 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/Example.tsx":
-/*!*********************************************!*\
-  !*** ./resources/js/components/Example.tsx ***!
-  \*********************************************/
+/***/ "./resources/js/layouts/Auth.tsx":
+/*!***************************************!*\
+  !*** ./resources/js/layouts/Auth.tsx ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -67282,26 +67304,142 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
-var react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
-var Example = /** @class */ (function (_super) {
-    __extends(Example, _super);
-    function Example() {
+var login_1 = __importDefault(__webpack_require__(/*! ../view/auth/login */ "./resources/js/view/auth/login.tsx"));
+var Auth = /** @class */ (function (_super) {
+    __extends(Auth, _super);
+    function Auth() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Example.prototype.render = function () {
-        return (react_1.default.createElement("div", { className: "container" },
-            react_1.default.createElement("div", { className: "row justify-content-center" },
-                react_1.default.createElement("div", { className: "col-md-8" },
-                    react_1.default.createElement("div", { className: "card" },
-                        react_1.default.createElement("div", { className: "card-header" }, "Example Component"),
-                        react_1.default.createElement("div", { className: "card-body" }, "I'm an example component!"))))));
+    Auth.prototype.render = function () {
+        return (react_1.default.createElement(react_1.default.Fragment, null,
+            react_1.default.createElement("main", null,
+                react_1.default.createElement("section", { className: "relative w-full h-full py-40 min-h-screen" },
+                    react_1.default.createElement(login_1.default, null)))));
     };
-    return Example;
+    return Auth;
 }(react_1.Component));
-exports.default = Example;
-if (document.getElementById('example')) {
-    react_dom_1.default.render(react_1.default.createElement(Example, null), document.getElementById('example'));
-}
+exports.default = Auth;
+;
+
+
+/***/ }),
+
+/***/ "./resources/js/router/router.tsx":
+/*!****************************************!*\
+  !*** ./resources/js/router/router.tsx ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var react_dom_1 = __importDefault(__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js"));
+//import Example from '../components/Example';
+var Auth_1 = __importDefault(__webpack_require__(/*! ../layouts/Auth */ "./resources/js/layouts/Auth.tsx"));
+react_dom_1.default.render(react_1.default.createElement(react_1.default.Fragment, null,
+    react_1.default.createElement(Auth_1.default, null)), document.getElementById('main'));
+
+
+/***/ }),
+
+/***/ "./resources/js/view/auth/login.tsx":
+/*!******************************************!*\
+  !*** ./resources/js/view/auth/login.tsx ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var Login = /** @class */ (function (_super) {
+    __extends(Login, _super);
+    function Login() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Login.prototype.render = function () {
+        return (react_1.default.createElement(react_1.default.Fragment, null,
+            react_1.default.createElement("div", { className: "container mx-auto px-4 h-full" },
+                react_1.default.createElement("div", { className: "flex content-center items-center justify-center h-full" },
+                    react_1.default.createElement("div", { className: "w-full lg:w-4/12 px-4" },
+                        react_1.default.createElement("div", { className: "relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-200 border-0" },
+                            react_1.default.createElement("div", { className: "rounded-t mb-0 px-6 py-6" },
+                                react_1.default.createElement("div", { className: "text-center mb-3" },
+                                    react_1.default.createElement("h6", { className: "text-blueGray-500 text-sm font-bold" }, "Sign in with")),
+                                react_1.default.createElement("div", { className: "btn-wrapper text-center" },
+                                    react_1.default.createElement("button", { className: "bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150", type: "button" },
+                                        react_1.default.createElement("img", { alt: "...", className: "w-5 mr-1", src: __webpack_require__(/*! ../../../img/github.svg */ "./resources/img/github.svg").default }),
+                                        "Github"),
+                                    react_1.default.createElement("button", { className: "bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150", type: "button" },
+                                        react_1.default.createElement("img", { alt: "...", className: "w-5 mr-1", src: __webpack_require__(/*! ../../../img/google.svg */ "./resources/img/google.svg").default }),
+                                        "Google")),
+                                react_1.default.createElement("hr", { className: "mt-6 border-b-1 border-blueGray-300" })),
+                            react_1.default.createElement("div", { className: "flex-auto px-4 lg:px-10 py-10 pt-0" },
+                                react_1.default.createElement("div", { className: "text-blueGray-400 text-center mb-3 font-bold" },
+                                    react_1.default.createElement("small", null, "Or sign in with credentials")),
+                                react_1.default.createElement("form", null,
+                                    react_1.default.createElement("div", { className: "relative w-full mb-3" },
+                                        react_1.default.createElement("label", { className: "block uppercase text-blueGray-600 text-xs font-bold mb-2", htmlFor: "grid-password" }, "Email"),
+                                        react_1.default.createElement("input", { type: "email", className: "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150", placeholder: "Email" })),
+                                    react_1.default.createElement("div", { className: "relative w-full mb-3" },
+                                        react_1.default.createElement("label", { className: "block uppercase text-blueGray-600 text-xs font-bold mb-2", htmlFor: "grid-password" }, "Password"),
+                                        react_1.default.createElement("input", { type: "password", className: "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150", placeholder: "Password" })),
+                                    react_1.default.createElement("div", null,
+                                        react_1.default.createElement("label", { className: "inline-flex items-center cursor-pointer" },
+                                            react_1.default.createElement("input", { id: "customCheckLogin", type: "checkbox", className: "form-checkbox border-0 rounded text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150" }),
+                                            react_1.default.createElement("span", { className: "ml-2 text-sm font-semibold text-blueGray-600" }, "Remember me"))),
+                                    react_1.default.createElement("div", { className: "text-center mt-6" },
+                                        react_1.default.createElement("button", { className: "bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150", type: "button" }, "Sign In"))))),
+                        react_1.default.createElement("div", { className: "flex flex-wrap mt-6 relative" },
+                            react_1.default.createElement("div", { className: "w-1/2" },
+                                react_1.default.createElement("a", { href: "#pablo", onClick: function (e) { return e.preventDefault(); }, className: "text-blueGray-200" },
+                                    react_1.default.createElement("small", null, "Forgot password?"))),
+                            react_1.default.createElement("div", { className: "w-1/2 text-right" })))))));
+    };
+    return Login;
+}(react_1.Component));
+exports.default = Login;
+;
 
 
 /***/ }),

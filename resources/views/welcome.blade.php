@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link href="{{asset('css/tailwind.css')}}" rel="stylesheet">
         <!-- Styles -->
         <style>
             html, body {
@@ -64,7 +64,7 @@
         </style>
     </head>
     <body>
-        <div id="example"></div>
+        <div id="main"></div>
         <script src="{{ asset('js/app.js') }}" ></script>
     </body>
 </html>
